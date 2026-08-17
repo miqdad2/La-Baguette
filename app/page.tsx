@@ -129,7 +129,7 @@ export default function Home() {
   return <main className="site-shell" style={{ "--accent": current.accent } as React.CSSProperties}>
     <header className="topbar">
       <a className="brand" href="#top" aria-label="La Baguette home"><span className="brand-mark"><img src="/assets/la-baguette-mark.png" alt="" /></span><span>LA BAGUETTE<small>KUWAIT · SINCE 1983</small></span></a>
-      <nav className={menu ? "nav open" : "nav"} aria-label="Primary navigation"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="https://order.labaguette.com.kw/">Order online</a></nav>
+      <nav className={menu ? "nav open" : "nav"} aria-label="Primary navigation"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="https://order.labaguette.com.kw/">Order online</a><button className="nav-cake-cta" onClick={() => { setCreatorOpen(true); setMenu(false); }}>Create your own cake</button></nav>
       <div className="header-actions"><button className="language" aria-label="Switch to Arabic">عربي</button><button className="mini-order" onClick={() => setCreatorOpen(true)}>Create your own cake</button><button className="menu" onClick={() => setMenu(!menu)} aria-label="Toggle menu"><span /><span /></button></div>
     </header>
     <CakeCreatorModal open={creatorOpen} onClose={() => setCreatorOpen(false)} />
