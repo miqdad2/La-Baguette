@@ -79,7 +79,7 @@ export default function CakeCreatorModal({ open, onClose }: { open: boolean; onC
   };
 
   const talk = () => {
-    const Speech = (window as unknown as { webkitSpeechRecognition?: new () => { lang: string; onresult: (event: { results: { 0: { 0: { transcript: string } } }[] }) => void; start: () => void } }).webkitSpeechRecognition;
+    const Speech = (window as unknown as { webkitSpeechRecognition?: new () => { lang: string; onresult: (event: { results: { 0: { transcript: string } }[] }) => void; start: () => void } }).webkitSpeechRecognition;
     if (!Speech) return setError("Voice input is not supported by this browser. You can type your idea instead.");
     const recognition = new Speech(); recognition.lang = "en-US"; recognition.onresult = (event) => setPrompt(event.results[0][0].transcript); recognition.start();
   };
